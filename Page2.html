@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Smile</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+      text-align: center;
+      color: #c9184a;
+    }
+
+    h1 {
+      margin-top: 18vh;
+      font-size: 2.8em;
+      text-shadow: 0 0 18px #ff6f91;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    .next-btn {
+      margin-top: 30px;
+      padding: 12px 28px;
+      font-size: 18px;
+      background: #f06292;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #ffb6c1;
+    }
+
+    .next-btn:hover {
+      background: #e75480;
+    }
+
+    img {
+      margin-top: 30px;
+      width: 220px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #ff7eb9;
+    }
+
+    /* Petals */
+    .petal {
+      position: fixed;
+      top: -50px;
+      color: #ffb6c1;
+      font-size: 24px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Your Smile</h1>
+  <p>Your smile lights up my darkest days. It’s my favorite curve, my favorite view, my favorite everything.</p>
+
+  <img src="https://i.ibb.co/Z2ym3v1/IMG-20240304-210021-232.jpg" alt="Her Smile">
+
+  <br>
+  <button class="next-btn" onclick="location.href='page3.html'">Next Page ➡️</button>
+
+  <audio autoplay loop muted onplay="this.muted=false">
+    <source src="https://files.catbox.moe/pjmxo8.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Petals
+    for (let i = 0; i < 25; i++) {
+      let petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.innerText = "🌸";
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
