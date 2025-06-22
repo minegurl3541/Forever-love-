@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>You Are Everything</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #fff5f5, #fcd5ce);
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+      text-align: center;
+      color: #8e0038;
+    }
+
+    h1 {
+      margin-top: 15vh;
+      font-size: 2.8em;
+      text-shadow: 0 0 18px #ff5e78;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    .next-btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 18px;
+      background: #d81b60;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #f48fb1;
+    }
+
+    .next-btn:hover {
+      background: #c2185b;
+    }
+
+    .image-heart {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .image-heart img {
+      width: 180px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #f06292;
+    }
+
+    /* Petals */
+    .petal {
+      position: fixed;
+      top: -50px;
+      color: #f8bbd0;
+      font-size: 24px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>You Are Everything</h1>
+  <p>In your eyes, I see my future. In your arms, I find home. You’re not just someone I love—you are everything I’ll ever need. 💖</p>
+
+  <div class="image-heart">
+    <img src="https://i.ibb.co/gTq54NV/IMG-20240304-210041-995.jpg" alt="Heart 1">
+    <img src="https://i.ibb.co/HYjmrMC/IMG-20240305-224500-603.jpg" alt="Heart 2">
+    <img src="https://i.ibb.co/hZVLKx0/IMG-20240304-210047-117.jpg" alt="Heart 3">
+  </div>
+
+  <br>
+  <button class="next-btn" onclick="location.href='page5.html'">Final Page ➡️</button>
+
+  <audio autoplay loop muted onplay="this.muted=false">
+    <source src="https://files.catbox.moe/pjmxo8.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    for (let i = 0; i < 25; i++) {
+      let petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.innerText = "🌸";
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
