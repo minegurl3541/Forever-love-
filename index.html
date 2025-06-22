@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Just Us Two</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #ffe6f0, #ffccd5);
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+      text-align: center;
+      color: #d6336c;
+    }
+
+    h1 {
+      margin-top: 20vh;
+      font-size: 3em;
+      text-shadow: 0 0 20px #ff85a2;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin: 20px auto;
+      max-width: 500px;
+    }
+
+    .start-btn {
+      padding: 12px 25px;
+      font-size: 18px;
+      background: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 0 15px #ff99cc;
+    }
+
+    .start-btn:hover {
+      background: #ff85a2;
+    }
+
+    /* Petals */
+    .petal {
+      position: fixed;
+      top: -50px;
+      color: #ffb6c1;
+      font-size: 24px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Just Us Two</h1>
+  <p>Every love story is beautiful... but ours is my favorite. Let me take you on a journey of us 💕</p>
+  <button class="start-btn" onclick="location.href='page2.html'">Begin Our Story ➡️</button>
+
+  <audio autoplay loop muted onplay="this.muted=false">
+    <source src="https://files.catbox.moe/pjmxo8.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Falling petals
+    for (let i = 0; i < 25; i++) {
+      let petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.innerText = "🌸";
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
