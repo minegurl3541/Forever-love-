@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Moments</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #ffe5ec, #ffc2d1);
+      font-family: 'Georgia', serif;
+      overflow: hidden;
+      text-align: center;
+      color: #ad1457;
+    }
+
+    h1 {
+      margin-top: 15vh;
+      font-size: 2.8em;
+      text-shadow: 0 0 15px #ff4081;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 20px auto;
+      max-width: 650px;
+    }
+
+    .next-btn {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 18px;
+      background: #ec407a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #f8bbd0;
+    }
+
+    .next-btn:hover {
+      background: #e91e63;
+    }
+
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      width: 200px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 12px #ff94c2;
+    }
+
+    /* Petals */
+    .petal {
+      position: fixed;
+      top: -50px;
+      color: #f48fb1;
+      font-size: 24px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Our Moments</h1>
+  <p>Every laugh, every hug, every shared silence — they're stitched into the fabric of my heart forever. These moments are the stars of my universe. ✨</p>
+
+  <div class="gallery">
+    <img src="https://i.ibb.co/xDczZ8h/IMG-20240305-224447-995.jpg" alt="Memory 1">
+    <img src="https://i.ibb.co/9ZRv2p1/IMG-20240307-004520-083.jpg" alt="Memory 2">
+    <img src="https://i.ibb.co/7VFms6j/IMG-20240305-224436-358.jpg" alt="Memory 3">
+  </div>
+
+  <br>
+  <button class="next-btn" onclick="location.href='page4.html'">Next Page ➡️</button>
+
+  <audio autoplay loop muted onplay="this.muted=false">
+    <source src="https://files.catbox.moe/pjmxo8.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Petals
+    for (let i = 0; i < 25; i++) {
+      let petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.innerText = "🌸";
+      petal.style.left = Math.random() * 100 + "vw";
+      petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
